@@ -67,7 +67,7 @@
 
     // Function to load geofences from the server
     function loadGeofences() {
-      fetch('controller/managerGeofence.php', {
+      fetch('controller/manageGeofence.php', {
           method: 'GET'
       })
       .then(response => response.json())
@@ -99,7 +99,7 @@
 
     // Function to save a geofence to the server
     function saveGeofence(name, geoJson) {
-      fetch('controller/managerGeofence.php', {
+      fetch('controller/manageGeofence.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -118,7 +118,7 @@
 
     // Function to update a geofence
     function updateGeofence(id, updatedGeoJson) {
-      fetch('controller/managerGeofence.php', {
+      fetch('controller/manageGeofence.php', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -138,7 +138,7 @@
 
     // Function to delete a geofence
     function deleteGeofence(id) {
-      fetch(`controller/managerGeofence.php?id=${id}`, {
+      fetch(`controller/manageGeofence.php?id=${id}`, {
         method: 'DELETE'
       })
       .then(response => response.json())
