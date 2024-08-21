@@ -92,7 +92,7 @@
       var geofenceName = prompt("Enter a name for the geofence:");
 
       if (geofenceName) {
-        alert(geoJson);
+        alert(JSON.stringify(geoJson));
         saveGeofence(geofenceName, geoJson);
       }
     });
