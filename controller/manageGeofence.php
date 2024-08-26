@@ -1,7 +1,7 @@
 <?php
-$host = 'localhost';
+$host = '3.26.76.229';
 $db = 'geofencing_db';
-$user = 'root';
+$user = 'localphp';
 $pass = 'password';
 $charset = 'utf8mb4';
 
