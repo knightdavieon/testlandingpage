@@ -76,6 +76,9 @@
       .then(data => {
           data.forEach(function(geofence) {
               var geoJsonLayer = L.geoJSON(JSON.parse(geofence.geojson));
+              geoJsonLayer.bindPopup(
+                `<b>${geofence.name}</b><br><button onclick="deleteGeofence(${geofence.id})">Delete</button>`
+              );
               drawnItems.addLayer(geoJsonLayer);
           });
       })
