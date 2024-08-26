@@ -34,8 +34,6 @@
   <!-- Turf.js JS -->
   <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
   <script>
-    var lastInsideGeofence = false;
-
     // Initialize the map; use the device's width to determine zoom level
     function initializeMap() {
       var map = L.map('map').setView([14.5780, 121.0410], getInitialZoom());
@@ -171,7 +169,6 @@
           var lat = position.coords.latitude;
           var lng = position.coords.longitude;
           updateLocationMarker(lat, lng);
-          checkGeofence(lat, lng);
         }, function(error) {
           alert('Error getting location: ' + error.message);
         }, {
@@ -185,25 +182,39 @@
     }
 
     // Function to check if current location is within any drawn geofence
-    function checkGeofence(lat, lng) {
-      var point = turf.point([lng, lat]); // Current location as a Turf point
-      var inside = false;
+    function checkGeofence() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+          var point = turf.point([lng, lat]); // Current location as a Turf point
+          var inside = false;
 
-      drawnItems.eachLayer(function(layer) {
-        var geoJson = layer.toGeoJSON();
+          // Debugging: Log the point coordinates
+          console.log('Checking geofence for point:', [lng, lat]);
 
-        if (turf.booleanPointInPolygon(point, geoJson)) {
-          inside = true;
-        }
-      });
+          drawnItems.eachLayer(function(layer) {
+            var geoJson = layer.toGeoJSON();
 
-      if (inside && !lastInsideGeofence) {
-        alert('You have entered a geofence');
-      } else if (!inside && lastInsideGeofence) {
-        alert('You have exited the geofence');
+            // Debugging: Log the geoJSON of each drawn item
+            console.log('Checking against geoJson:', geoJson);
+
+            if (turf.booleanPointInPolygon(point, geoJson)) {
+              inside = true;
+            }
+          });
+
+          if (inside) {
+            alert('You are inside a geofence');
+          } else {
+            alert('You are outside all geofences');
+          }
+        }, function(error) {
+          alert('Error getting location: ' + error.message);
+        });
+      } else {
+        alert('Geolocation is not supported by this browser.');
       }
-
-      lastInsideGeofence = inside;
     }
 
     // Track location in real-time as soon as the page loads
