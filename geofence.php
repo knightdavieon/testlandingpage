@@ -230,9 +230,11 @@
           insideAnyGeofence = true;
           return; // Exit the loop once we find that the location is inside at least one geofence
         }
-        console.log(insideAnyGeofence);
+        
       });
-
+      
+      console.log(insideAnyGeofence);
+      console.log(lastInsideGeofence);
       // Alert user if inside at least one geofence, or if outside all geofences
       if (insideAnyGeofence && !lastInsideGeofence) {
         console.log('You have entered a geofence');
