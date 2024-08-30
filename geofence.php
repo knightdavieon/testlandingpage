@@ -17,8 +17,8 @@
     }
     
     #map {
-      height: 50%; /* Fill the available height */
-      width: 50%;  /* Fill the available width */
+      height: 100%; /* Fill the available height */
+      width: 100%;  /* Fill the available width */
     }
   </style>
 </head>
