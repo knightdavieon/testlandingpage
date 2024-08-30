@@ -17,8 +17,8 @@
     }
     
     #map {
-      height: 100%; /* Fill the available height */
-      width: 100%;  /* Fill the available width */
+      height: 50%; /* Fill the available height */
+      width: 50%;  /* Fill the available width */
     }
   </style>
 </head>
@@ -216,30 +216,19 @@
       // Iterate over each geofence layer
       drawnItems.eachLayer(function(layer) {
         var geoJson = layer.toGeoJSON();
-        console.log("Point: " + JSON.stringify(point));
-        console.log("Polygon: " + JSON.stringify(geoJson));
-        let coordinates = geoJson.features[0].geometry.coordinates;
-        console.log("Polygon Coords: " + coordinates);
 
-        let poly = { type: 'Polygon', coordinates: coordinates }
-        
         // Check if the current location is within the current geofence
-        if (turf.booleanPointInPolygon(point, poly)) {
-          console.log("inside booleanPointInPolygon");
-
+        if (turf.booleanPointInPolygon(point, geoJson)) {
           insideAnyGeofence = true;
           return; // Exit the loop once we find that the location is inside at least one geofence
         }
-        
       });
-      
-      console.log(insideAnyGeofence);
-      console.log(lastInsideGeofence);
+
       // Alert user if inside at least one geofence, or if outside all geofences
       if (insideAnyGeofence && !lastInsideGeofence) {
-        console.log('You have entered a geofence');
+        alert('You have entered a geofence');
       } else if (!insideAnyGeofence && lastInsideGeofence) {
-        console.log('You have exited the geofence');
+        alert('You have exited the geofence');
       }
 
       lastInsideGeofence = insideAnyGeofence;
