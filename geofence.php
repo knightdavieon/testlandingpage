@@ -34,6 +34,12 @@
   <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
   <!-- Turf.js JS -->
   <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <!-- SweetAlert2 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
   <script>
     var lastInsideGeofence = false;
     var geofenceLayers = []; // Array to hold geofence layers and their names
