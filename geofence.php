@@ -216,10 +216,10 @@
       // Iterate over each geofence layer
       drawnItems.eachLayer(function(layer) {
         var geoJson = layer.toGeoJSON();
-        console.log("Point: " + point);
-        console.log("Point: " + JSON.stringify(geoJson));
+        console.log("Point: " + JSON.stringify(point));
+        console.log("Polygon: " + JSON.stringify(geoJson));
         // Check if the current location is within the current geofence
-        if (turf.booleanPointInPolygon(point, JSON.stringify(geoJson))) {
+        if (turf.booleanPointInPolygon(JSON.stringify(point), JSON.stringify(geoJson))) {
           insideAnyGeofence = true;
           return; // Exit the loop once we find that the location is inside at least one geofence
         }
