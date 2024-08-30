@@ -218,8 +218,10 @@
         var geoJson = layer.toGeoJSON();
         console.log("Point: " + JSON.stringify(point));
         console.log("Polygon: " + JSON.stringify(geoJson));
+        let coordinates = geoJson.features[0].geometry.coordinates;
+        console.log("Polygon Coords: " + coordinates);
         // Check if the current location is within the current geofence
-        if (turf.booleanPointInPolygon(point, JSON.stringify(geoJson))) {
+        if (turf.booleanPointInPolygon(point, coordinates)) {
           insideAnyGeofence = true;
           return; // Exit the loop once we find that the location is inside at least one geofence
         }
