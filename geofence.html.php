@@ -17,8 +17,8 @@
     }
     
     #map {
-      height: 100%; /* Fill the available height */
-      width: 100%;  /* Fill the available width */
+      height: 50%; /* Fill the available height */
+      width: 50%;  /* Fill the available width */
     }
   </style>
 </head>
@@ -26,6 +26,7 @@
   <h1>Geofencing Example with Drawing and Real-time Location Tracking</h1>
   <div id="map"></div>
   <button onclick="checkGeofence()">Check Geofence</button>
+  <button onclick="displayGeofences()">Display Geofences</button>
   
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -34,6 +35,9 @@
   <!-- Turf.js JS -->
   <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
   <script>
+    var lastInsideGeofence = false;
+    var geofenceLayers = []; // Array to hold geofence layers and their names
+
     // Initialize the map; use the device's width to determine zoom level
     function initializeMap() {
       var map = L.map('map').setView([14.5780, 121.0410], getInitialZoom());
@@ -74,7 +78,13 @@
       .then(data => {
           data.forEach(function(geofence) {
               var geoJsonLayer = L.geoJSON(JSON.parse(geofence.geojson));
+              geoJsonLayer.bindPopup(
+                `<b>${geofence.name}</b><br><button onclick="deleteGeofence(${geofence.id})">Delete</button>`
+              );
               drawnItems.addLayer(geoJsonLayer);
+
+              // Store geofence name and layer
+              geofenceLayers.push({ name: geofence.name, layer: geoJsonLayer });
           });
       })
       .catch(error => console.error('Error:', error));
@@ -144,8 +154,24 @@
       .then(response => response.json())
       .then(data => {
         console.log('Geofence deleted:', data);
+
+        // Find and remove the corresponding layer from the map
+        drawnItems.eachLayer(function(layer) {
+          var geoJson = layer.toGeoJSON();
+          
+          // Assuming the ID is stored in the GeoJSON properties or you can match with the server response
+          if (geoJson.properties && geoJson.properties.id === id) {
+            drawnItems.removeLayer(layer);
+          }
+        });
       })
       .catch(error => console.error('Error:', error));
+    }
+
+    // Function to display all geofences in a list format in an alert
+    function displayGeofences() {
+      var geofenceNames = geofenceLayers.map(g => g.name);
+      alert("Geofences:\n" + geofenceNames.join("\n"));
     }
 
     // Add a marker for the user's location
@@ -169,6 +195,7 @@
           var lat = position.coords.latitude;
           var lng = position.coords.longitude;
           updateLocationMarker(lat, lng);
+          checkGeofence(lat, lng);
         }, function(error) {
           alert('Error getting location: ' + error.message);
         }, {
@@ -181,40 +208,30 @@
       }
     }
 
-    // Function to check if current location is within any drawn geofence
-    function checkGeofence() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var lat = position.coords.latitude;
-          var lng = position.coords.longitude;
-          var point = turf.point([lng, lat]); // Current location as a Turf point
-          var inside = false;
+    // Function to check if the current location is within any of the defined geofences
+    function checkGeofence(lat, lng) {
+      var point = turf.point([lng, lat]); // Current location as a Turf point
+      var insideAnyGeofence = false; // Flag to track if inside at least one geofence
 
-          // Debugging: Log the point coordinates
-          console.log('Checking geofence for point:', [lng, lat]);
+      // Iterate over each geofence layer
+      drawnItems.eachLayer(function(layer) {
+        var geoJson = layer.toGeoJSON();
 
-          drawnItems.eachLayer(function(layer) {
-            var geoJson = layer.toGeoJSON();
+        // Check if the current location is within the current geofence
+        if (turf.booleanPointInPolygon(point, geoJson)) {
+          insideAnyGeofence = true;
+          return; // Exit the loop once we find that the location is inside at least one geofence
+        }
+      });
 
-            // Debugging: Log the geoJSON of each drawn item
-            console.log('Checking against geoJson:', geoJson);
-
-            if (turf.booleanPointInPolygon(point, geoJson)) {
-              inside = true;
-            }
-          });
-
-          if (inside) {
-            alert('You are inside a geofence');
-          } else {
-            alert('You are outside all geofences');
-          }
-        }, function(error) {
-          alert('Error getting location: ' + error.message);
-        });
-      } else {
-        alert('Geolocation is not supported by this browser.');
+      // Alert user if inside at least one geofence, or if outside all geofences
+      if (insideAnyGeofence && !lastInsideGeofence) {
+        alert('You have entered a geofence');
+      } else if (!insideAnyGeofence && lastInsideGeofence) {
+        alert('You have exited the geofence');
       }
+
+      lastInsideGeofence = insideAnyGeofence;
     }
 
     // Track location in real-time as soon as the page loads
