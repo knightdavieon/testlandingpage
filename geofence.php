@@ -225,6 +225,7 @@
         
         // Check if the current location is within the current geofence
         if (turf.booleanPointInPolygon(point, poly)) {
+          console.log("inside booleanPointInPolygon");
           insideAnyGeofence = true;
           return; // Exit the loop once we find that the location is inside at least one geofence
         }
@@ -232,9 +233,9 @@
 
       // Alert user if inside at least one geofence, or if outside all geofences
       if (insideAnyGeofence && !lastInsideGeofence) {
-        alert('You have entered a geofence');
+        console.log('You have entered a geofence');
       } else if (!insideAnyGeofence && lastInsideGeofence) {
-        alert('You have exited the geofence');
+        console.log('You have exited the geofence');
       }
 
       lastInsideGeofence = insideAnyGeofence;
