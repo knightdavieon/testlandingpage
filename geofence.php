@@ -105,17 +105,37 @@
       drawnItems.addLayer(layer);
 
       var geoJson = layer.toGeoJSON();
-      var geofenceName = prompt("Enter a name for the geofence:");
 
-      if (geofenceName) {
-        Swal.fire({
-          title: 'Geofence JSON',
-          text: JSON.stringify(geoJson),
-          icon: 'info',
-          confirmButtonText: 'OK'
-        });
-        saveGeofence(geofenceName, geoJson);
-      }
+      // Use SweetAlert2 to get the name of the geofence
+      Swal.fire({
+        title: 'Enter a name for the geofence',
+        input: 'text',
+        inputLabel: 'Geofence Name',
+        inputPlaceholder: 'Enter the geofence name here...',
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        cancelButtonText: 'Cancel',
+        inputValidator: (value) => {
+          if (!value) {
+            return 'You need to enter a name!';
+          }
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          var geofenceName = result.value;
+          
+          // Show the GeoJSON data
+          Swal.fire({
+            title: 'Geofence JSON',
+            text: JSON.stringify(geoJson),
+            icon: 'info',
+            confirmButtonText: 'OK'
+          });
+
+          // Save the geofence
+          saveGeofence(geofenceName, geoJson);
+        }
+      });
     });
 
     // Function to save a geofence to the server
