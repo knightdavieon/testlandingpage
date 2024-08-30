@@ -102,7 +102,12 @@
       var geofenceName = prompt("Enter a name for the geofence:");
 
       if (geofenceName) {
-        alert(JSON.stringify(geoJson));
+        Swal.fire({
+          title: 'Geofence JSON',
+          text: JSON.stringify(geoJson),
+          icon: 'info',
+          confirmButtonText: 'OK'
+        });
         saveGeofence(geofenceName, geoJson);
       }
     });
@@ -168,10 +173,15 @@
       .catch(error => console.error('Error:', error));
     }
 
-    // Function to display all geofences in a list format in an alert
+    // Function to display all geofences in a list format using SweetAlert
     function displayGeofences() {
       var geofenceNames = geofenceLayers.map(g => g.name);
-      alert("Geofences:\n" + geofenceNames.join("\n"));
+      Swal.fire({
+        title: 'Geofences',
+        text: geofenceNames.join("\n"),
+        icon: 'info',
+        confirmButtonText: 'OK'
+      });
     }
 
     // Add a marker for the user's location
@@ -197,14 +207,24 @@
           updateLocationMarker(lat, lng);
           checkGeofence(lat, lng);
         }, function(error) {
-          alert('Error getting location: ' + error.message);
+          Swal.fire({
+            title: 'Location Error',
+            text: 'Error getting location: ' + error.message,
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
         }, {
           enableHighAccuracy: true,
           maximumAge: 1000,
           timeout: 5000
         });
       } else {
-        alert('Geolocation is not supported by this browser.');
+        Swal.fire({
+          title: 'Geolocation Error',
+          text: 'Geolocation is not supported by this browser.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       }
     }
 
@@ -235,11 +255,21 @@
       
       console.log(insideAnyGeofence);
       console.log(lastInsideGeofence);
-      // Alert user if inside at least one geofence, or if outside all geofences
+      // Notify user if inside at least one geofence, or if outside all geofences
       if (insideAnyGeofence && !lastInsideGeofence) {
-        console.log('You have entered a geofence');
+        Swal.fire({
+          title: 'Geofence Alert',
+          text: 'You have entered a geofence',
+          icon: 'info',
+          confirmButtonText: 'OK'
+        });
       } else if (!insideAnyGeofence && lastInsideGeofence) {
-        console.log('You have exited the geofence');
+        Swal.fire({
+          title: 'Geofence Alert',
+          text: 'You have exited the geofence',
+          icon: 'info',
+          confirmButtonText: 'OK'
+        });
       }
 
       lastInsideGeofence = insideAnyGeofence;
@@ -252,6 +282,7 @@
     window.addEventListener('resize', function() {
       map.invalidateSize();
     });
+
   </script>
 </body>
 </html>
