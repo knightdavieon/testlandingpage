@@ -31,11 +31,11 @@
                 <p class="login-box-msg">Sign in</p>
                 <form id="loginForm" method="POST">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" required>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                         <div class="input-group-text"><span class="bi bi-envelope"></span></div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" required>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                         <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
                     </div>
                     <div class="row">
@@ -82,7 +82,7 @@
           document.getElementById('loginForm').addEventListener('submit', function(event) {
               event.preventDefault(); // Prevent default form submission
       
-              const formData = new FormData(this);
+              const formData = new FormData(document.getElementById('loginForm'));
       
               fetch('controller/auth/login.php', {
                   method: "POST",
