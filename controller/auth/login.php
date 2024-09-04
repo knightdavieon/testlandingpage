@@ -19,19 +19,20 @@ include('../db/connection.php');
 //     exit;
 // }
 
-
+//echo "before server method post";
 
 // Check if form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form input
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    //$email = $_POST['email'];
+    //$password = $_POST['password'];
+
 
     // Prepare and execute SQL query
     $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+ 
     // Verify password
     if ($user && password_verify($password, $user['password'])) {
         // Set session variables
@@ -44,5 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Error response
         echo json_encode(['status' => 'error', 'message' => 'Invalid email or password']);
     }
+}else{
+    echo json_encode(['status' => 'success', 'message' => 'request method not post']);
 }
 ?>

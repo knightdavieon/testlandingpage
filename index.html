@@ -29,7 +29,7 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in</p>
-                <form id="loginForm" action="login.php" method="post">
+                <form id="loginForm" method="POST">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" required>
                         <div class="input-group-text"><span class="bi bi-envelope"></span></div>
@@ -84,8 +84,8 @@
       
               const formData = new FormData(this);
       
-              fetch('login.php', {
-                  method: 'POST',
+              fetch('controller/auth/login.php', {
+                  method: "POST",
                   body: formData
               })
               .then(response => response.json())
@@ -98,7 +98,7 @@
                           confirmButtonText: 'OK'
                       }).then((result) => {
                           if (result.isConfirmed) {
-                              window.location.href = 'dashboard.php'; // Redirect to a secure page
+                              window.location.href = 'dashboard/'; // Redirect to a secure page
                           }
                       });
                   } else {
