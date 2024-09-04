@@ -1,5 +1,5 @@
 <?php
-include('../db/connection.php');
+include('db/connection.php');
 
 $method = $_SERVER['REQUEST_METHOD'];
 
