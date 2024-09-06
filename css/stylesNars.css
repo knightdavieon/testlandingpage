@@ -13,12 +13,17 @@
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #843af4;
   --bs-btn-disabled-border-color: #843af4;
+<<<<<<< HEAD
 } 
 
+=======
+}
+ 
+>>>>>>> 5002c41c864a6af505201bffbd04c0cb6c7f8983
 .page-section {
   padding: 5rem 0;
 }
-
+ 
 hr.divider {
   height: 0.2rem;
   max-width: 3.25rem;
@@ -26,18 +31,23 @@ hr.divider {
   background-color: #843af4;
   opacity: 1;
 }
-
+ 
 hr.divider-light {
   background-color: #843af4;
 }
-
+ 
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #843af4;
   transition: background-color 0.2s ease;
 }
+<<<<<<< HEAD
 
 
+=======
+ 
+ 
+>>>>>>> 5002c41c864a6af505201bffbd04c0cb6c7f8983
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
@@ -47,3 +57,4 @@ header.masthead {
   background-attachment: scroll;
   background-size: cover;
 }
+
