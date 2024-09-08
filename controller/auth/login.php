@@ -45,7 +45,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Error response
         echo json_encode(['status' => 'error', 'message' => 'Invalid email or password']);
     }
-}else{
-    echo json_encode(['status' => 'success', 'message' => 'request method not post']);
 }
 ?>
