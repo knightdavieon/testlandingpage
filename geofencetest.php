@@ -1,15 +1,11 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geofencing Example with Drawing and Real-time Location Tracking</title>
+  <title>Real-Time Location Tracking</title>
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <!-- Leaflet Draw CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
   <style>
     html, body {
       height: 100%;
@@ -17,221 +13,46 @@
       padding: 0;
     }
     #map {
-      height: 100%;
-      width: 100%;
+      height: 100%; /* Fill the available height */
+      width: 100%;  /* Fill the available width */
     }
   </style>
 </head>
 <body>
-  <h1>Geofencing Example with Drawing and Real-time Location Tracking</h1>
+  <h1>Real-Time Location Tracking for All Devices</h1>
   <div id="map"></div>
-  <button onclick="checkGeofence()">Check Geofence</button>
-  <button onclick="displayGeofences()">Display Geofences</button>
   <button onclick="showActiveDevices()">Show Active Devices</button>
   
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Leaflet Draw JS -->
-  <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
-  <!-- Turf.js JS -->
-  <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
   <!-- SweetAlert2 CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <!-- SweetAlert2 JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
   <script>
-    var deviceId = <?php echo json_encode($_SESSION['email'] ?? ''); ?>;
-    if (!deviceId) {
-      Swal.fire({
-        title: 'Session Expired',
-        text: 'You need to log in again.',
-        icon: 'warning',
-        timer: 5000,
-        timerProgressBar: true,
-        willClose: () => {
-          window.location.href = '/';
-        }
-      });
-    }
+    var map = L.map('map').setView([14.5780, 121.0410], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
-    var lastInsideGeofence = false;
-    var geofenceLayers = [];
-    var deviceMarkers = {};
+    var deviceMarkers = {}; // Store markers for each device
 
-    function initializeMap() {
-      var map = L.map('map').setView([14.5780, 121.0410], getInitialZoom());
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
-      return map;
-    }
-
-    function getInitialZoom() {
-      var width = window.innerWidth;
-      if (width <= 480) return 11;
-      if (width <= 768) return 12;
-      return 13;
-    }
-
-    var map = initializeMap();
-
-    var drawnItems = L.featureGroup().addTo(map);
-    var drawControl = new L.Control.Draw({
-      edit: { featureGroup: drawnItems }
-    });
-    //map.addControl(drawControl);
-
-    function loadGeofences() {
-      fetch('controller/manageGeofence.php', { method: 'GET' })
-      .then(response => response.json())
-      .then(data => {
-        data.forEach(function(geofence) {
-          var geoJsonLayer = L.geoJSON(JSON.parse(geofence.geojson));
-          geoJsonLayer.bindPopup(
-            `<b>${geofence.name}</b><br><button onclick="deleteGeofence(${geofence.id})">Delete</button>`
-          );
-          drawnItems.addLayer(geoJsonLayer);
-          geofenceLayers.push({ name: geofence.name, layer: geoJsonLayer });
-        });
-      })
-      .catch(error => console.error('Error:', error));
-    }
-
-    map.whenReady(loadGeofences);
-
-    map.on(L.Draw.Event.CREATED, function(event) {
-      var layer = event.layer;
-      drawnItems.addLayer(layer);
-      var geoJson = layer.toGeoJSON();
-      Swal.fire({
-        title: 'Enter a name for the geofence',
-        input: 'text',
-        inputLabel: 'Geofence Name',
-        inputPlaceholder: 'Enter the geofence name here...',
-        showCancelButton: true,
-        confirmButtonText: 'Save',
-        cancelButtonText: 'Cancel',
-        inputValidator: (value) => {
-          if (!value) return 'You need to enter a name!';
-        }
-      }).then((result) => {
-        if (result.isConfirmed) {
-          var geofenceName = result.value;
-          Swal.fire({
-            title: 'Geofence JSON',
-            text: JSON.stringify(geoJson),
-            icon: 'info',
-            confirmButtonText: 'OK'
-          });
-          saveGeofence(geofenceName, geoJson);
-        }
-      });
-    });
-
-    function saveGeofence(name, geoJson) {
-      fetch('controller/manageGeofence.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, geojson: geoJson }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Geofence saved:', data);
-      })
-      .catch(error => console.error('Error:', error));
-    }
-
-    function updateGeofence(id, updatedGeoJson) {
-      fetch('controller/manageGeofence.php', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: id, name: "Updated Name", geojson: updatedGeoJson }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Geofence updated:', data);
-      })
-      .catch(error => console.error('Error:', error));
-    }
-
-    function deleteGeofence(id) {
-      fetch(`controller/manageGeofence.php?id=${id}`, { method: 'DELETE' })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Geofence deleted:', data);
-        drawnItems.eachLayer(function(layer) {
-          var geoJson = layer.toGeoJSON();
-          if (geoJson.properties && geoJson.properties.id === id) {
-            drawnItems.removeLayer(layer);
-          }
-        });
-      })
-      .catch(error => console.error('Error:', error));
-    }
-
-    function displayGeofences() {
-      var geofenceNames = geofenceLayers.map(g => g.name);
-      Swal.fire({
-        title: 'Geofences',
-        text: geofenceNames.join("\n"),
-        icon: 'info',
-        confirmButtonText: 'OK'
-      });
-    }
-
-    function updateLocationMarker(lat, lng) {
-      if (locationMarker) {
-        map.removeLayer(locationMarker);
-      }
-      locationMarker = L.marker([lat, lng]).addTo(map)
-        .bindPopup('Your location')
-        .openPopup();
-      map.setView([lat, lng], map.getZoom());
-    }
-
-    function sendLocationUpdate(lat, lng) {
-      if (!deviceId) return;
-      fetch('controller/location/updateLocation.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ device_id: deviceId, latitude: lat, longitude: lng }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Location update response:', data);
-      })
-      .catch(error => console.error('Error:', error));
-    }
-
-    function updateDeviceMarkers() {
-      fetch('controller/location/getLocations.php')
-        .then(response => response.json())
-        .then(data => {
-          data.forEach(location => {
-            if (!deviceMarkers[location.device_id]) {
-              deviceMarkers[location.device_id] = L.marker([location.latitude, location.longitude]).addTo(map)
-                .bindPopup(`Device ID: ${location.device_id}`)
-                .openPopup();
-            } else {
-              deviceMarkers[location.device_id].setLatLng([location.latitude, location.longitude]);
-            }
-          });
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
+    // Function to fetch and display active devices
     function showActiveDevices() {
-      fetch('controller/location/getActiveDevices.php')
+      fetch('controller/location/getActiveDevices.php') // Ensure this endpoint returns active devices
         .then(response => response.json())
         .then(data => {
-          Object.values(deviceMarkers).forEach(marker => map.removeLayer(marker)); // Clear existing markers
-          data.forEach(device => {
-            var deviceId = device.id; // Replace with actual device ID field from your API
-            var latitude = device.latitude;
-            var longitude = device.longitude;
+          // Clear existing markers
+          Object.values(deviceMarkers).forEach(marker => map.removeLayer(marker));
+          deviceMarkers = {}; // Reset deviceMarkers
 
-            var marker = L.marker([latitude, longitude]).addTo(map)
+          data.forEach(device => {
+            var deviceId = device.device_id;
+            var lat = device.latitude;
+            var lng = device.longitude;
+
+            var marker = L.marker([lat, lng]).addTo(map)
               .bindPopup(`Device ID: ${deviceId}`)
               .openPopup();
 
@@ -241,15 +62,38 @@
         .catch(error => console.error('Error:', error));
     }
 
+    // Function to update device locations in real-time
+    function updateDeviceMarkers() {
+      fetch('controller/location/getLocations.php') // Fetch all device locations
+        .then(response => response.json())
+        .then(data => {
+          // Clear existing markers
+          Object.values(deviceMarkers).forEach(marker => map.removeLayer(marker));
+          deviceMarkers = {}; // Reset deviceMarkers
+
+          data.forEach(location => {
+            var deviceId = location.device_id;
+            var lat = location.latitude;
+            var lng = location.longitude;
+
+            var marker = L.marker([lat, lng]).addTo(map)
+              .bindPopup(`Device ID: ${deviceId}`)
+              .openPopup();
+
+            deviceMarkers[deviceId] = marker;
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Function to track location in real-time
     function trackLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.watchPosition(function(position) {
           var lat = position.coords.latitude;
           var lng = position.coords.longitude;
-          updateLocationMarker(lat, lng);
-          sendLocationUpdate(lat, lng);
-          checkGeofence(lat, lng);
-          updateDeviceMarkers();
+          // Update your own location marker here if needed
+          updateDeviceMarkers(); // Update markers for all devices
         }, function(error) {
           Swal.fire({
             title: 'Location Error',
@@ -272,43 +116,11 @@
       }
     }
 
-    function checkGeofence(lat, lng) {
-      var point = turf.point([lng, lat]);
-      var insideAnyGeofence = false;
-
-      drawnItems.eachLayer(function(layer) {
-        var geoJson = layer.toGeoJSON();
-        let coordinates = geoJson.features[0].geometry.coordinates;
-        let poly = { type: 'Polygon', coordinates: coordinates }
-        if (turf.booleanPointInPolygon(point, poly)) {
-          insideAnyGeofence = true;
-          return;
-        }
-      });
-
-      if (insideAnyGeofence && !lastInsideGeofence) {
-        Swal.fire({
-          title: 'Geofence Alert',
-          text: 'You have entered a geofence',
-          icon: 'info',
-          confirmButtonText: 'OK'
-        });
-      } else if (!insideAnyGeofence && lastInsideGeofence) {
-        Swal.fire({
-          title: 'Geofence Alert',
-          text: 'You have exited the geofence',
-          icon: 'info',
-          confirmButtonText: 'OK'
-        });
-      }
-
-      lastInsideGeofence = insideAnyGeofence;
-    }
-
-    trackLocation();
+    trackLocation(); // Start tracking location
+    setInterval(updateDeviceMarkers, 5000); // Update device markers every 5 seconds
 
     window.addEventListener('resize', function() {
-      map.invalidateSize();
+      map.invalidateSize(); // Adjust map size on window resize
     });
   </script>
 </body>
