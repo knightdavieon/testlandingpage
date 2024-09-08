@@ -82,7 +82,7 @@ var lastInsideGeofence = false;
       }).then((result) => {
         if (result.isConfirmed) {
           var geofenceName = result.value;
-          
+          reloadTable();
           // Show the GeoJSON data
           Swal.fire({
             title: 'Geofence JSON',
@@ -180,7 +180,7 @@ var lastInsideGeofence = false;
       locationMarker = L.marker([lat, lng]).addTo(map)
         .bindPopup('Your location')
         .openPopup();
-      map.setView([lat, lng], map.getZoom());  // Recenter the map on the user's location without changing the zoom level
+      //map.setView([lat, lng], map.getZoom());  // Recenter the map on the user's location without changing the zoom level
     }
 
     // Track location in real-time
@@ -241,21 +241,21 @@ var lastInsideGeofence = false;
       console.log(insideAnyGeofence);
       console.log(lastInsideGeofence);
       // Notify user if inside at least one geofence, or if outside all geofences
-      if (insideAnyGeofence && !lastInsideGeofence) {
-        Swal.fire({
-          title: 'Geofence Alert',
-          text: 'You have entered a geofence',
-          icon: 'info',
-          confirmButtonText: 'OK'
-        });
-      } else if (!insideAnyGeofence && lastInsideGeofence) {
-        Swal.fire({
-          title: 'Geofence Alert',
-          text: 'You have exited the geofence',
-          icon: 'info',
-          confirmButtonText: 'OK'
-        });
-      }
+      // if (insideAnyGeofence && !lastInsideGeofence) {
+      //   Swal.fire({
+      //     title: 'Geofence Alert',
+      //     text: 'You have entered a geofence',
+      //     icon: 'info',
+      //     confirmButtonText: 'OK'
+      //   });
+      // } else if (!insideAnyGeofence && lastInsideGeofence) {
+      //   Swal.fire({
+      //     title: 'Geofence Alert',
+      //     text: 'You have exited the geofence',
+      //     icon: 'info',
+      //     confirmButtonText: 'OK'
+      //   });
+      // }
 
       lastInsideGeofence = insideAnyGeofence;
     }
