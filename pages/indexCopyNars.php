@@ -16,8 +16,8 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/stylesrnld.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+        <link href="../css/stylesNars.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -25,148 +25,90 @@
             <div class="container px-4 px-lg-5">
     
                 <!--<div class="bg-success p-2" style="--bs-bg-opacity: .5;">This is 50% opacity success background</div>-->
-                <a class="navbar-brand" href="indexrnldCopy.html">FissionFlux Navigator</a>
+                <a class="navbar-brand" href="#page-top">FissionFlux Navigator</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="indexrnldCopy.html#about">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Tools
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="reactorcontrolpanel.html">Reactor Control Panel</a></li>
-                                <li><a class="dropdown-item" href="turbinecontrolpanel.html">Turbine Control Panel</a></li>
-                                <li><a class="dropdown-item" href="humanmachineinterface.html">Human Machine Interface</a></li>
-                                <li><a class="dropdown-item" href="alarmpanel.html">Alarm Panels</a></li>
-                                <li><a class="dropdown-item" href="radiationinstrument.html">Radiation Monitoring Instruments</a></li>
-                                <li><a class="dropdown-item" href="backuppower.html">BackUp Power Systems</a></li>
-                            </ul>
-                          </li>
-                        <li class="nav-item"><a class="nav-link" href="indexrnldCopy.html#training">Trainings</a></li>
-                        <li class="nav-item"><a class="nav-link" href="indexrnldCopy.html#contact">Safety</a></li>
-                        <li class="nav-item"><a class="nav-link" href="indexrnldCopy.html#about">Maintenance Protocol</a></li>
-                        <li class="nav-item"><a class="nav-link" href="indexrnldCopy.html#services">People</a></li>
-                        <li class="nav-item"><a class="nav-link" href="indexrnldCopy.html#portfolio">Future Enhancements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Trainings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Safety</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Maintenance Protocol</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">People</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Future Enhancements</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="mastheadhuman">
-            <!--div class="container text-center"></div>-->
-                <div class="row">
-                    <div class="col">
-                        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                            <div class="col-lg-8 align-self-end">
-                                <h1 class="text-white font-weight-bold"><strong>Human-Machine Interface</strong></h1>
-                                <hr class="divider"/>
-                            </div>
-                            <div class="p-3">
-                                <img class="img-fluid" src="assets/img/Control Room/HumanMachineInterface.jpg" alt="..." />
-                            </div>
-                            
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Welcome to <strong>Control Room</strong></h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5 border border-primary-subtle rounded-5">Monitors and controls the operation of the nuclear reactor.</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-dark" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Features</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">The control room serves as the central hub for monitoring and controlling the nuclear reactor and associated systems. Its primary purposes include Monitoring Reactor Conditions, Controlling Reactor Operations, Safety and Emergency Response, and Data Logging and Analysis.Overall, this room is the nerve center of a nuclear power plant, ensuring the safe and efficient operation of the nuclear reactor and related systems.</p>
+                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">People</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-person-circle fs-1 text-dark"></i></div>
+                            <h3 class="h4 mb-2">Katalina Perry</h3>
+                            <p class="text-muted mb-0">Plant Manager</p>
+                            <p class="text-muted mb-0">+38-157-409</p>
                         </div>
                     </div>
-                    <div class="col container mt-4">
-                        <div class="scrollable-container text-white mt-0 p-3">
-                            <p>The Nuclear Human-Machine Interface (HMI) is a critical component in the operation of nuclear power plants, designed to facilitate interaction between operators and complex plant systems. It encompasses the hardware and software used by operators to monitor, control, and manage the plant’s operations safely and efficiently. Here’s a comprehensive overview of the Nuclear HMI, including its features, usage, and more:</p>
-
-                            <h3 class="text-white mt-0">About Nuclear Human-Machine Interface (HMI)</h3>
-                                
-                            <h5 class="text-white mt-0">1. Definition:</h5>
-                                <p>- The Nuclear HMI is a system that provides operators with the means to interact with and control the plant’s machinery and processes. It integrates data visualization, control functions, and communication tools to support effective decision-making and operational management.</p>
-                                
-                            <h5 class="text-white mt-0">2. Purpose:</h5>
-                                <p>- To enhance the safety, efficiency, and reliability of plant operations by providing intuitive and real-time information to operators.
-                                <p>- To support complex control tasks and ensure operators can manage the plant effectively under normal and emergency conditions.</p>
-                                
-                            <h3 class="text-white mt-0">Components</h3>
-                                
-                            <h5 class="text-white mt-0">1. User Interface:</h5>
-                                    <b>- Displays:</b>
-                                        <p>High-resolution screens that present real-time data, including system status, alarms, and performance metrics.</p>
-                                    <b>- Controls:</b>
-                                        <p>Touchscreens, physical buttons, dials, and joysticks used for manual control and adjustments of plant systems.</p>
-                                    <b>- Graphics:</b>
-                                        <p>Sophisticated graphical representations of the plant’s layout, processes, and status to aid in understanding complex information.</p>
-                                
-                            <h5 class="text-white mt-0">2. Data Processing:</h5>
-                                <b>- Control Systems:</b>
-                                    <p>Embedded software that processes data from sensors and other inputs, executing control commands and adjusting plant systems accordingly.</p>
-                                <b>- Data Integration:</b>
-                                    <p>Systems that aggregate and correlate data from various sources to provide a comprehensive view of plant operations.</p>
-                                
-                            <h5 class="text-white mt-0">3. Communication:</b>
-                                <b>- Internal Communication:</b>
-                                    <p>Tools for communication between control room operators and field personnel.</p>
-                                <b>- External Communication:</b>
-                                    <p>Interfaces for remote monitoring and control, including secure connections for off-site access if applicable.</p>
-                                
-                            <h5 class="text-white mt-0">4. Alarm and Notification Systems:</h5>
-                                <b>- Alarms:</b>
-                                    <p>Visual and audible alerts for abnormal conditions or system failures.</p>
-                                <b>- Notifications:</b>
-                                    <p>Messages that provide detailed information about alarms and operational status.</p>
-                                
-                            <h3 class="text-white mt-0">Usage</h3>
-                                
-                            <h5 class="text-white mt-0">1. Monitoring and Control:</h5>
-                                <b>- Real-Time Monitoring:</b>
-                                    <p>Operators use the HMI to view real-time data on various plant systems, including reactor status, turbine performance, and auxiliary systems.</p>
-                                <b>- System Control:</b>
-                                    <p>Through the HMI, operators can start or stop equipment, adjust settings, and manage system operations.</p>
-                                
-                            <h5 class="text-white mt-0">2. Decision Support:</h5>
-                                <b>- Data Analysis:</b>
-                                    <p>Provides tools for analyzing data trends, performance metrics, and historical records to support decision-making.</p>
-                                <b>- Scenario Analysis:</b>
-                                    <p>Simulates different operational scenarios to predict outcomes and prepare for potential issues.</p>
-                                
-                            <h5 class="text-white mt-0">3. Safety Management:</h5>
-                                <b>- Emergency Response:</b>
-                                    <p>Facilitates rapid response to emergencies by providing critical information and control options for executing safety protocols.</p>
-                                <b>- Alarm Handling:</b>
-                                    <p>Helps operators prioritize and address alarms based on severity and impact.</p>
-                                
-                            <h5 class="text-white mt-0">4. Operational Efficiency:</h5>
-                                <b>- Optimization:</b>
-                                    <p>Assists in optimizing plant operations by providing detailed insights into performance and identifying opportunities for improvement.</p>
-                                <b>- Maintenance:</b>
-                                    <p>Supports predictive maintenance by tracking equipment conditions and performance trends.</p>
-                                
-                            <h3 class="text-white mt-0">More Details</h3>
-                                
-                            <h5 class="text-white mt-0">1. Training and Simulation:</h5>
-                                <b>- Operator Training:</b>
-                                    <p>Comprehensive training programs to familiarize operators with the HMI’s functionality, including simulated scenarios to practice responses to various conditions.</p>
-                                <b>- Simulation Tools:</b> 
-                                    <p>Use of simulators and training environments to replicate plant operations and emergencies for training purposes.</p>
-                                
-                            <h5 class="text-white mt-0">2. Regulatory Compliance:</h5>
-                                <b>- Standards and Regulations:</b>
-                                    <p>The HMI must comply with regulatory standards and guidelines to ensure safety, reliability, and data integrity.</p>
-                                <b>- Audits and Inspections:</b>
-                                    <p>Regular audits and inspections to ensure the HMI meets safety and performance requirements.</p>
-                                
-                            <h5 class="text-white mt-0">3. Technological Advancements:</h5>
-                                <b>- Advanced Features:</b>
-                                    <p>Integration of new technologies such as artificial intelligence for predictive analytics, augmented reality for enhanced visualization, and cybersecurity measures to protect against threats.</p>
-                                <b>- Upgrades and Enhancements:</b>
-                                    <p>>Ongoing development to incorporate the latest technologies and improve system capabilities.</p>
-                                
-                            <h5 class="text-white mt-0">4. Human Factors Engineering:</h5>
-                                <b>- User-Centered Design:</b>
-                                    <p>The HMI is designed with consideration for human factors, ensuring that it is intuitive and minimizes the risk of operator error.</p>
-                                <b>- Usability Studies:</b>
-                                    <p>Ongoing research and studies to enhance the user interface and overall user experience.</p>
-                                
-                                <p>The Nuclear Human-Machine Interface plays a pivotal role in ensuring the safe and efficient operation of nuclear power plants. It combines advanced technology with user-centric design to provide operators with the tools they need to manage complex systems effectively and respond to operational challenges.</p>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-person-circle fs-1 text-dark"></i></div>
+                            <h3 class="h4 mb-2">Waylon Lindsey</h3>
+                            <p class="text-muted mb-0">Operations Manager</p>
+                            <p class="text-muted mb-0">+08-838-157</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-person-circle fs-1 text-dark"></i></div>
+                            <h3 class="h4 mb-2">Dominic Cruz</h3>
+                            <p class="text-muted mb-0">Systems Engineer</p>
+                            <p class="text-muted mb-0">+40-936-373</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-person-circle fs-1 text-dark"></i></div>
+                            <h3 class="h4 mb-2">Liam Tucker</h3>
+                            <p class="text-muted mb-0">Emergency Director</p>
+                            <p class="text-muted mb-0">+15-740-936</p>
                         </div>
                     </div>
                 </div>
-            <!--/div-->
-        </header>
+            </div>
+        </section>
         <!-- Portfolio-->
         <div id="portfolio">
             <div class="container-fluid p-0">
@@ -228,6 +170,13 @@
                 </div>
             </div>
         </div>
+        <!-- Call to action-->
+        <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Trainings</h2>
+                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Start Now</a>
+            </div>
+        </section>
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
@@ -312,7 +261,7 @@
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
