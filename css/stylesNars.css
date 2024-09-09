@@ -13,8 +13,13 @@
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #843af4;
   --bs-btn-disabled-border-color: #843af4;
+<<<<<<< HEAD
+} 
+
+=======
 }
  
+>>>>>>> 5002c41c864a6af505201bffbd04c0cb6c7f8983
 .page-section {
   padding: 5rem 0;
 }
@@ -36,8 +41,13 @@ hr.divider-light {
   background-color: #843af4;
   transition: background-color 0.2s ease;
 }
+<<<<<<< HEAD
+
+
+=======
  
  
+>>>>>>> 5002c41c864a6af505201bffbd04c0cb6c7f8983
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
