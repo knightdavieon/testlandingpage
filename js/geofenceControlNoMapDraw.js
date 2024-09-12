@@ -258,7 +258,7 @@ function checkGeofence(lat, lng) {
     console.log(risk);
     if(sessionUserType == 'admin' || sessionUserType == 'sme'){
       if(risk == 'Y'){
-        message = 'You are entering a high risk environment. for the meantime Would you like to view informations about this room and all the tools and process for this room';
+        message = 'You are entering a high risk environment. Would you like to view informations about this room and all the tools and process for this room';
       }else{
         message = 'Would you like to view informations about this room and all the tools and process for this room';
       }
@@ -266,22 +266,22 @@ function checkGeofence(lat, lng) {
       if(risk == 'Y'){
         message = 'You are entering a high risk environment, Please be informed that an SME will be contacting you shortly. for the meantime Would you like to view informations about this room and all the tools and process for this room';
       }else{
-        message = 'Employee Would you like to view informations about this room and all the tools and process for this room';
+        message = 'Would you like to view informations about this room and all the tools and process for this room';
       }
       
     }
 
-    Swal.fire({
-      title: 'You have entered ' + gname,
-      text: message,
-      icon: 'info',
-      confirmButtonText: 'OK'
-    });
+    // Swal.fire({
+    //   title: 'You have entered ' + gname,
+    //   text: message,
+    //   icon: 'info',
+    //   confirmButtonText: 'OK'
+    // });
 
     Swal.fire({
       title: 'You have entered ' + gname,
       text: message,
-      icon: 'info',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'No'

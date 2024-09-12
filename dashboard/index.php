@@ -40,13 +40,20 @@
             z-index: 1;
             /* Ensure it's above other elements */
         }
+
+
+        /* Change color for warning icon */
+        .swal2-warning .swal2-icon-content {
+            color: #e30707;
+            /* Set your desired color here */
+        }
     </style>
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
 
     <script>
-         var sessionUserType = <?php echo json_encode($_SESSION['userType']) ?>;
+        var sessionUserType = <?php echo json_encode($_SESSION['userType']) ?>;
     </script>
     <div class="app-wrapper"> <!--begin::Header-->
         <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
@@ -57,8 +64,19 @@
                     <li class="nav-item d-none d-md-block"> <a href="#" class="nav-link">Contact</a> </li>
                 </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
                 <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
-                    <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i class="bi bi-search"></i> </a> </li> <!--end::Navbar Search--> <!--begin::Messages Dropdown Menu-->
+                    <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i class="bi bi-search"></i> </a> </li> <!--end::Navbar Search-->
 
+                    <!--begin::Messages Dropdown Menu-->
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-bs-toggle="dropdown" href="#">
+                            <i class="bi bi-chat-text"></i>
+                            <span id="notification-badge" class="navbar-badge badge text-bg-danger">0</span>
+                        </a>
+                        <div id="notification-dropdown" class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                        </div>
+                    </li>
                     <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a> </li> <!--end::Fullscreen Toggle--> <!--begin::User Menu Dropdown-->
                     <li class="nav-item dropdown user-menu"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <i class="user-image rounded-circle shadow nav-icon bi bi-person-circle"></i> <span class="d-none d-md-inline">USER</span> </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
@@ -66,7 +84,7 @@
                             <li class="user-header text-bg-primary">
                                 <img src="assets/adminlte-v4.0.0-beta2/dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image">
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    USER - Web Developer
                                     <small>Member since Nov. 2023</small>
                                 </p>
                             </li>
@@ -363,6 +381,62 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script> <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
     <script src="../assets/adminlte-v4.0.0-beta2/dist/js/adminlte.js"></script> <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to fetch notifications from the PHP backend
+            function fetchNotifications() {
+                fetch('../controller/notification/fetchNotifications.php') // Replace with your PHP file path
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Fetched data:', data); // Debugging line
+
+                        const notificationBadge = document.getElementById('notification-badge');
+                        const notificationDropdown = document.getElementById('notification-dropdown');
+
+                        if (!data.data || !Array.isArray(data.data)) {
+                            console.error('Unexpected data format:', data);
+                            return;
+                        }
+
+                        // Clear existing notifications
+                        notificationDropdown.innerHTML = '<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>';
+
+                        // Update badge count
+                        notificationBadge.textContent = data.data.length;
+
+                        // Populate dropdown with notifications
+                        data.data.forEach(data => {
+                            const notificationItem = document.createElement('a');
+                            notificationItem.href = '#';
+                            notificationItem.classList.add('dropdown-item');
+                            notificationItem.innerHTML = `
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="user-image rounded-circle shadow nav-icon bi bi-person-circle"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h3 class="dropdown-item-title">
+                                    ${data.notif_from}
+                                    <span class="float-end fs-7 text-danger"><i class="bi bi-star-fill"></i></span>
+                                </h3>
+                                <p class="fs-7">${data.message}</p>
+                                <p class="fs-7 text-secondary"><i class="bi bi-clock-fill me-1"></i>${data.timestamp}</p>
+                            </div>
+                        </div>
+                    `;
+                            notificationDropdown.insertBefore(notificationItem, notificationDropdown.firstChild);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching notifications:', error);
+                    });
+            }
+
+            // Fetch notifications on page load
+            fetchNotifications();
+        });
+
+
+
         const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
         const Default = {
             scrollbarTheme: "os-theme-light",

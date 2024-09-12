@@ -65,7 +65,7 @@
                             <li class="user-header text-bg-primary">
                                 <img src="assets/adminlte-v4.0.0-beta2/dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image">
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    USER - Web Developer
                                     <small>Member since Nov. 2023</small>
                                 </p>
                             </li>
