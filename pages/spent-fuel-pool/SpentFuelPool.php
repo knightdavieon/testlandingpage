@@ -353,159 +353,34 @@
         </div>
         </section>
         
-        <!-- Maintenance-->
-        <section class="page-section bg-secondary " id="Maintenance">
+        <!-- Future Enhancement-->
+        <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h2 class="text-black mt-0">Maintenance</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-black-75 mb-4">Maintenance procedures in nuclear power plants are critical for ensuring the safe and efficient operation of the facility. These procedures are designed to maintain the integrity of systems and equipment, minimize the risk of accidents, and extend the operational life of the plant. Here’s an overview of typical maintenance procedures:</p>
-                    </div>
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-                                <strong>Routine Maintenance</strong>
-                            </button>
-                          </h2>
-                          <div id="collapseOne1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Scheduled Inspections: Regular checks of plant equipment and systems, such as pumps, valves, and control systems, to ensure they are operating correctly.</p>
-                                <p class="text-black-75 mb-4">• Preventive Maintenance: Routine tasks performed to prevent equipment failures, such as lubrication, cleaning, and calibration.</p>
-                                <p class="text-black-75 mb-4">• Operational Testing: Testing of systems and components under normal operating conditions to ensure they perform as expected.</p>
-                            </div>
-                          </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                <strong>Corrective Maintenance</strong>
-                            </button>
-                          </h2>
-                          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Scheduled Inspections: Regular checks of plant equipment and systems, such as pumps, valves, and control systems, to ensure they are operating correctly.</p>
-                                <p class="text-black-75 mb-4">• Preventive Maintenance: Routine tasks performed to prevent equipment failures, such as lubrication, cleaning, and calibration.</p>
-                                <p class="text-black-75 mb-4">• Operational Testing: Testing of systems and components under normal operating conditions to ensure they perform as expected.</p>
-                            </div>
-                          </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                <strong>Corrective Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Problem Diagnosis: Identifying the cause of equipment malfunctions or failures through diagnostic tools and methods.</p>
-                                <p class="text-black-75 mb-4">• Repairs and Replacements: Fixing or replacing defective components to restore equipment to proper working condition.</p>
-                              </div>
-                            </div>
-                        </div>
-                          
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                <strong>Predictive Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                  <p class="text-black-75 mb-4">• Condition Monitoring: Using techniques such as vibration analysis, thermography, and acoustic emission to monitor the condition of equipment and predict potential failures before they occur.</p>
-                                  <p class="text-black-75 mb-4">• Data Analysis: Analyzing historical data and trends to forecast equipment needs and plan maintenance activities accordingly.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                <strong>Outage Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">
-                                    • Scheduled Outages: Plant shutdowns planned for major maintenance activities, including refueling and extensive inspections.</p>
-                                <p class="text-black-75 mb-4">• Major Overhauls: Detailed inspections, refurbishments, or replacements of critical components during longer plant shutdowns.</p>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                                <strong>Safety Procedures</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Lockout/Tagout (LOTO): Procedures to ensure that equipment is safely de-energized and isolated before maintenance work begins to protect personnel from accidental energization.</p>
-                                <p class="text-black-75 mb-4">• Radiation Protection: Ensuring that maintenance activities are conducted with appropriate radiation protection measures, including the use of personal protective equipment (PPE) and monitoring radiation levels.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                                <strong>Documentation and Record-Keeping</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Maintenance Records: Detailed documentation of all maintenance activities, including inspections, repairs, and replacements, is maintained for regulatory compliance and historical reference.</p>
-                                <p class="text-black-75 mb-4">• Reporting: Documenting any issues or anomalies discovered during maintenance and reporting them to ensure follow-up actions are taken.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                                <strong>Training and Competency</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Staff Training: Ongoing training programs to ensure that maintenance personnel are up-to-date with the latest procedures, technologies, and safety practices.</p>
-                                <p class="text-black-75 mb-4">• Competency Assessment: Regular evaluation of maintenance staff to ensure they possess the necessary skills and knowledge to perform their tasks safely and effectively.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapseThree">
-                                <strong>Quality Assurance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Inspections and Audits: Regular internal and external audits of maintenance procedures and practices to ensure compliance with safety standards and regulations.</p>
-                                <p class="text-black-75 mb-4">• Continuous Improvement: Implementing lessons learned from maintenance activities and incidents to enhance procedures and practices continuously.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item"></div>
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                                <strong>Emergency Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Rapid Response: Procedures for addressing unexpected equipment failures or issues that arise during normal operation or in emergency situations.</p>
-                                <p class="text-black-75 mb-4">• Coordination: Ensuring that emergency maintenance is coordinated with plant operations and emergency response teams to minimize disruptions and maintain safety.</p>
-                                </div>
-                            </div>
+                <h2 class="text-center mt-0">Future Enhancement</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-phone fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Augmented Reality</h3>
+                            
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">RFID integration</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Proximity Sensors</h3>
+                            
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
