@@ -108,9 +108,7 @@
                         <li class="nav-item"> <a href="/dashboard/" class="nav-link"> <i class="nav-icon bi bi-speedometer"></i>
                                 <p>Dashboard</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="/dashboard/" class="nav-link"> <i class="nav-icon bi bi-speedometer"></i>
-                                <p>User</p>
-                            </a> </li>
+                        
                         <li class="nav-item"> <a href="/dashboard/manageGeofence.php" class="nav-link"> <i class="nav-icon bi bi-link"></i>
                                 <p>Manage Geofence</p>
                             </a> </li>
