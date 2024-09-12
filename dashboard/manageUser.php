@@ -1,5 +1,3 @@
-<?php include('../controller/auth/manageSessions.php') ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +41,6 @@
             z-index: 1;
             /* Ensure it's above other elements */
         }
-        
     </style>
 </head>
 
@@ -108,13 +105,13 @@
                 <div class="container-fluid"> <!--begin::Row-->
                     <div class="row">
                         <div class="col-sm-6">
-                            <h3 class="mb-0">Manage Geofences</h3>
+                            <h3 class="mb-0">Manage Users</h3>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Manage Geofences
+                                    Manage Users
                                 </li>
                             </ol>
                         </div>
@@ -127,14 +124,54 @@
                         <!-- place map here -->
                         <div class="col-lg-6 col-6"> <!--begin::Small Box Widget 1-->
                             <div class="card">
-                                <table id="manageFence" class="table table-striped" style="width:100%">
+                                <form action="" id="createUser">
+                                    <div class="card-header">
+                                        <h4>Create User</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" name="firstName">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="lastName" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" name="lastName">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="email" name="email">
+                                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Type</label>
+                                            <select class="form-select" aria-label="Default select example" id="type" name="type">
+                                                
+                                                <option value="admin">Admin</option>
+                                                <option value="sme">SME</option>
+                                                <option value="employee">Employee</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6"> <!--begin::Small Box Widget 1-->
+                            <div class="card">
+                                <table id="manageUser" class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Page</th>
-                                            <th>High Risk</th>
-                                            <th>Created At</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Type</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -144,19 +181,17 @@
                                     <tfoot>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Page</th>
-                                            <th>High Risk</th>
-                                            <th>Created At</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Type</th>
                                             <th>Actions</th>
                                         </tr>
                                     </tfoot>
                                 </table>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-6"> <!--begin::Small Box Widget 1-->
-                            <div id="map"></div>
-                        </div>
+
                     </div> <!--end::Row--> <!--begin::Row-->
 
                 </div> <!--end::Container-->
@@ -219,26 +254,64 @@
             }
         }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('createUser');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Do you want to submit this form?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, submit it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const formData = new FormData(form);
+
+                        fetch('../controller/manageUser/addUser.php', { // Replace with your server endpoint
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                table.ajax.reload();
+                                Swal.fire('Success!', 'Your form has been submitted.', 'success');
+                                // Optionally, handle response here
+                            })
+                            .catch(error => {
+                                Swal.fire('Error!', 'There was an error submitting your form.', 'error');
+                            });
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        Swal.fire('Cancelled', 'Your form submission was cancelled.', 'error');
+                    }
+                });
+            });
+        });
+
         $(document).ready(function() {
-            table = $('#manageFence').DataTable({
+            table = $('#manageUser').DataTable({
                 ajax: {
-                    url: '../controller/manageGeofence/fetchGeofence.php', // Adjust this path to your actual PHP script
+                    url: '../controller/manageUser/fetchUser.php', // Adjust this path to your actual PHP script
                     dataSrc: 'data' // This specifies that the actual data is within the 'data' key
                 },
                 columns: [{
                         data: 'id'
                     },
                     {
-                        data: 'name'
+                        data: 'firstname'
                     },
                     {
-                        data: 'page'
+                        data: 'lastname'
                     },
                     {
-                        data: 'high_risk'
+                        data: 'email'
                     },
                     {
-                        data: 'created_at'
+                        data: 'usertype'
                     },
                     {
                         data: null,
@@ -247,60 +320,22 @@
                 ]
             });
 
-            // $('#manageFence').on('click', '.edit-btn', function() {
-            //     var data = table.row($(this).parents('tr')).data();
-            //     Swal.fire({
-            //         title: 'Set Geofence Page',
-            //         input: 'text',
-            //         inputLabel: 'Enter new page value',
-            //         inputValue: data.page || '', // Default to current value or empty
-            //         showCancelButton: true,
-            //         confirmButtonText: 'Set',
-            //         cancelButtonText: 'Cancel',
-            //         inputValidator: (value) => {
-            //             if (!value) {
-            //                 return 'You need to enter a value!';
-            //             }
-            //         }
-            //     }).then((result) => {
-            //         if (result.isConfirmed) {
-            //             var updatedValue = result.value;
-            //             // You can now send this updated value to your server
-            //             $.ajax({
-            //                 url: '../controller/manageGeofence/updateGeofencepage.php', // Endpoint to handle the update
-            //                 type: 'POST',
-            //                 data: {
-            //                     id: data.id,
-            //                     page: updatedValue
-            //                 },
-            //                 success: function(response) {
-            //                     // Optionally handle the response from the server
-            //                     table.ajax.reload(); // Reload the table data
-            //                 },
-            //                 error: function(xhr, status, error) {
-            //                     // Handle errors
-            //                     Swal.fire('Error', 'Failed to update the page value.', 'error');
-            //                 }
-            //             });
-            //         }
-            //     });
-            // });
-
-            $('#manageFence').on('click', '.edit-btn', function() {
+            $('#manageUser').on('click', '.edit-btn', function() {
                 var data = table.row($(this).parents('tr')).data();
 
                 Swal.fire({
                     title: `Edit ${data.name} Details`,
                     html: `
                             <div class="form-group">
-                                <label for="swal-input-page">Page Value</label>
-                                <input id="swal-input-page" class="swal2-input" placeholder="Enter new page value" value="${data.page || ''}">
+                                <label for="swal-input-email">Page Value</label>
+                                <input id="swal-input-email" class="swal2-input" placeholder="Enter new page value" value="${data.email || ''}">
                             </div>
                             <div class="form-group">
-                                <label for="swal-input-high-risk">High Risk</label>
-                                <select id="swal-input-high-risk" class="swal2-select">
-                                    <option value="Y" ${data.high_risk === 'Y' ? 'selected' : ''}>Y</option>
-                                    <option value="N" ${data.high_risk === 'N' ? 'selected' : ''}>N</option>
+                                <label for="swal-input-usertype">High Risk</label>
+                                <select id="swal-input-usertype" class="swal2-select">
+                                    <option value="admin" ${data.usertype === 'admin' ? 'selected' : ''}>Admin</option>
+                                    <option value="sme" ${data.usertype === 'sme' ? 'selected' : ''}>SME</option>
+                                    <option value="employee" ${data.usertype === 'employee' ? 'selected' : ''}>Employee</option>
                                 </select>
                             </div>
                         `,
@@ -308,34 +343,34 @@
                     confirmButtonText: 'Set',
                     cancelButtonText: 'Cancel',
                     preConfirm: () => {
-                        const pageValue = Swal.getPopup().querySelector('#swal-input-page').value;
-                        const highRiskValue = Swal.getPopup().querySelector('#swal-input-high-risk').value;
+                        const emailValue = Swal.getPopup().querySelector('#swal-input-email').value;
+                        const usertypeValue = Swal.getPopup().querySelector('#swal-input-usertype').value;
 
-                        if (!pageValue) {
+                        if (!emailValue) {
                             Swal.showValidationMessage('You need to enter a page value!');
                             return false;
                         }
 
                         return {
-                            page: pageValue,
-                            high_risk: highRiskValue
+                            email: emailValue,
+                            usertype: usertypeValue
                         };
                     }
                 }).then((result) => {
                     if (result.isConfirmed) {
                         var {
-                            page,
-                            high_risk
+                            email,
+                            usertype
                         } = result.value;
 
                         // Send the updated values to the server
                         $.ajax({
-                            url: '../controller/manageGeofence/updateGeofencepage.php', // Endpoint to handle the update
+                            url: '../controller/manageUser/updateUser.php', // Endpoint to handle the update
                             type: 'POST',
                             data: {
                                 id: data.id,
-                                page: page,
-                                high_risk: high_risk
+                                email: email,
+                                usertype: usertype
                             },
                             success: function(response) {
                                 // Optionally handle the response from the server
@@ -351,7 +386,7 @@
             });
 
 
-            $('#manageFence').on('click', '.delete-btn', function() {
+            $('#manageUser').on('click', '.delete-btn', function() {
                 var data = table.row($(this).parents('tr')).data();
                 Swal.fire({
                     title: 'Are you sure?',

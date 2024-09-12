@@ -4,16 +4,16 @@ header('Content-Type: application/json');
 include('../db/connection.php');
 
 $id = $_POST['id'];
-$page = $_POST['page'];
-$high_risk = $_POST['high_risk'];
+$email = $_POST['email'];
+$usertype = $_POST['usertype'];
 
 // Perform your database update logic here
 // Example:
-$update_query = "UPDATE geofences SET page = ?, high_risk = ? WHERE id = ?";
+$update_query = "UPDATE users SET usertype = ? WHERE id = ?";
 $stmt = $pdo->prepare($update_query);
 //$stmt->execute([$page, $id]);
 
-if ($stmt->execute([$page, $high_risk, $id])) {
+if ($stmt->execute([$usertype, $id])) {
     echo json_encode([
         'status' => 'success',
         'message' => 'Page set successfully'

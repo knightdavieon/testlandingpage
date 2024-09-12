@@ -33,7 +33,7 @@ var drawControl = new L.Control.Draw({
     featureGroup: drawnItems
   }
 });
-map.addControl(drawControl); // Uncomment to add the draw control to the map
+//map.addControl(drawControl); // Uncomment to add the draw control to the map
 
 // Function to load geofences from the server
 function loadGeofences() {
@@ -46,12 +46,12 @@ function loadGeofences() {
       data.forEach(function (geofence) {
         var geoJsonLayer = L.geoJSON(JSON.parse(geofence.geojson));
         geoJsonLayer.bindPopup(
-          `<b>${geofence.name}</b><br><button onclick="deleteGeofence(${geofence.id})">Delete</button>`
+          `<b>${geofence.name} ${geofence.high_risk}</b><br><button onclick="deleteGeofence(${geofence.id})">Delete</button>`
         );
         drawnItems.addLayer(geoJsonLayer);
 
         // Store geofence ID, name, and layer
-        geofenceLayers.push({ id: geofence.id, name: geofence.name, page: geofence.page, layer: geoJsonLayer });
+        geofenceLayers.push({ id: geofence.id, name: geofence.name, page: geofence.page, layer: geoJsonLayer, highRisk: geofence.high_risk });
       });
     })
     .catch(error => console.error('Error:', error));
@@ -241,7 +241,7 @@ function checkGeofence(lat, lng) {
       // Get the ID and name of the geofence
       let geofence = geofenceLayers.find(g => g.layer === layer);
       if (geofence) {
-        geofencesInside.push({ id: geofence.id, name: geofence.name, page: geofence.page });
+        geofencesInside.push({ id: geofence.id, name: geofence.name, page: geofence.page, highRisk: geofence.highRisk });
       }
     }
   });
@@ -251,7 +251,25 @@ function checkGeofence(lat, lng) {
 
     let gname = geofencesInside.map(g => `${g.name}`);
     let page = geofencesInside.map(g => `${g.page}`);
-    let message = 'Would you like to view informations about this room and all the tools and process for this room';
+    let risk = geofencesInside.map(g => `${g.highRisk}`);
+    let message = '';
+    console.log(gname)
+    console.log(page)
+    console.log(risk);
+    if(sessionUserType == 'admin' || sessionUserType == 'sme'){
+      if(risk == 'Y'){
+        message = 'You are entering a high risk environment. for the meantime Would you like to view informations about this room and all the tools and process for this room';
+      }else{
+        message = 'Would you like to view informations about this room and all the tools and process for this room';
+      }
+    }else{
+      if(risk == 'Y'){
+        message = 'You are entering a high risk environment, Please be informed that an SME will be contacting you shortly. for the meantime Would you like to view informations about this room and all the tools and process for this room';
+      }else{
+        message = 'Employee Would you like to view informations about this room and all the tools and process for this room';
+      }
+      
+    }
 
     Swal.fire({
       title: 'You have entered ' + gname,
