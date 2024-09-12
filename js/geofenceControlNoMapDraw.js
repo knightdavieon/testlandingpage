@@ -10,7 +10,8 @@ function initializeMap() {
   // Add a tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxNativeZoom: 25,
-    maxZoom: 24
+    maxZoom: 24,
+    
   }).addTo(map);
 
   return map;
@@ -19,9 +20,9 @@ function initializeMap() {
 // Function to determine initial zoom level based on device width
 function getInitialZoom() {
   var width = window.innerWidth;
-  if (width <= 480) return 11; // Mobile devices
-  if (width <= 768) return 12; // Tablets
-  return 13; // Desktops
+  if (width <= 480) return 19; // Mobile devices
+  if (width <= 768) return 19; // Tablets
+  return 19; // Desktops
 }
 
 var map = initializeMap();
