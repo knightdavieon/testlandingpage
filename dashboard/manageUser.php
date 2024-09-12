@@ -84,16 +84,16 @@
             <div class="sidebar-wrapper">
                 <nav class="mt-2"> <!--begin::Sidebar Menu-->
                     <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item"> <a href="/testlandingpage/dashboard/" class="nav-link"> <i class="nav-icon bi bi-speedometer"></i>
+                        <li class="nav-item"> <a href="/dashboard/" class="nav-link"> <i class="nav-icon bi bi-speedometer"></i>
                                 <p>Dashboard</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="/testlandingpage/dashboard/" class="nav-link"> <i class="nav-icon bi bi-speedometer"></i>
+                        <li class="nav-item"> <a href="/dashboard/" class="nav-link"> <i class="nav-icon bi bi-speedometer"></i>
                                 <p>User</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="/testlandingpage/dashboard/manageGeofence.php" class="nav-link"> <i class="nav-icon bi bi-link"></i>
+                        <li class="nav-item"> <a href="/dashboard/manageGeofence.php" class="nav-link"> <i class="nav-icon bi bi-link"></i>
                                 <p>Manage Geofence</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="/testlandingpage/dashboard/manageUser.php" class="nav-link"> <i class="nav-icon bi bi-link"></i>
+                        <li class="nav-item"> <a href="/dashboard/manageUser.php" class="nav-link"> <i class="nav-icon bi bi-link"></i>
                                 <p>Manage Users</p>
                             </a> </li>
                     </ul> <!--end::Sidebar Menu-->
@@ -149,7 +149,7 @@
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Type</label>
                                             <select class="form-select" aria-label="Default select example" id="type" name="type">
-                                                
+
                                                 <option value="admin">Admin</option>
                                                 <option value="sme">SME</option>
                                                 <option value="employee">Employee</option>
