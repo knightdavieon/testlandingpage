@@ -24,7 +24,7 @@
         <!-- Header -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" style="color:black" href="ReactorHall.html">FissionFlux Navigator</a>
+                <a class="navbar-brand" style="color:black" href="ReactorHall.php">FissionFlux Navigator</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -130,16 +130,12 @@
                                       Select Document
                                     </button>
                                     <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Document 1</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 2</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 3</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 4</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 5</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 6</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 7</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 8</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 9</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 10</a></li>
+                                      <li><a class="dropdown-item" href="#">Alarm Panel Document</a></li>
+                                      <li><a class="dropdown-item" href="#">BackUp Power System Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Human Machine Interface Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Radiation Monitoring Instruments Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Reactor Control Panel Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Nuclear Turbine Control Panel</a></li>
                                     </ul>
                                   </div>
                                 </div>
