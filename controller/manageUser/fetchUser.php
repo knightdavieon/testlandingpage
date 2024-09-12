@@ -8,7 +8,7 @@ include('../db/connection.php');
 try {
     
     // Query to fetch data
-    $stmt = $pdo->query('SELECT id, name, geojson, page, high_risk, created_at FROM geofences');
+    $stmt = $pdo->query('SELECT * FROM users');
     
     // Fetch data
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);

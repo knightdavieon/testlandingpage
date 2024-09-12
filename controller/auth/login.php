@@ -38,10 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Set session variables
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
+        $_SESSION['loggedIn'] = true;
+        $_SESSION['userType'] = $user['usertype'];
 
         // Success response
         echo json_encode(['status' => 'success', 'message' => 'Login successful']);
     } else {
+        $_SESSION['loggedIn'] = false;
         // Error response
         echo json_encode(['status' => 'error', 'message' => 'Invalid email or password']);
     }
