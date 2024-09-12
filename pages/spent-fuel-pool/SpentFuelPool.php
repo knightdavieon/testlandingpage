@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>Reactor Hall</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
@@ -16,21 +16,38 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/stylesNars.css" rel="stylesheet" />
-        <link href="css/stylesrnld.css" rel="stylesheet" />
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <link href="../../css/stylesNars.css" rel="stylesheet" />
+        <link href="../../css/stylesrnld.css" rel="stylesheet" />
+        <style>
+          .icon-1x {
+              font-size: 24px !important;
+          }
+          a{
+              text-decoration:none;    
+          }
+          .text-primary, a.text-primary:focus, a.text-primary:hover {
+              color: #00ADBB!important;
+          }
+          .text-black, .text-hover-black:hover {
+              color: #000 !important;
+          }
+          .font-weight-bold {
+              font-weight: 700 !important;
+          }
+        </style>
     </head>
     <body id="page-top">
         <!-- Header -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="SpentFuelPool.html">FissionFlux Navigator</a>
+                <a class="navbar-brand" style="color: black" href="SpentFuelPool.php">FissionFlux Navigator</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="SpentFuelPool_About.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="SpentFuelPool_About.html">About</a></li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" style="color: black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tools
                           </a>
                           <ul class="dropdown-menu">
@@ -42,11 +59,11 @@
                             <li><a class="dropdown-item" href="SpentFuelPool_Tool_turbinecontrol.html">Turbine Control Panel</a></li>
                         </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#training">Trainings</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Safety">Safety</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Maintenance">Maintenance Protocol</a></li>
-                        <li class="nav-item"><a class="nav-link" href="1PeopleReactorHall.html">People</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Future">Future Enhancements</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#training">Trainings</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#Safety">Safety</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#Maintenance">Maintenance Protocol</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="SpentFuelRoom_People.html">People</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#Future">Future Enhancements</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,50 +83,179 @@
                 </div>
             </div>
         </header>
-        <!-- About -->
+        <!-- Sharing Hub -->
         <section class="page-section bg-info" id="About">
-            <div class="container px-4 px-lg-5">
-                <h2 class="text-center text-dark mt-0">About</h2>
-                <hr class="divider" />
-                <div class="row gx-4 gx-lg-5">
-                    <p class="text-dark-75 mb-4">In a nuclear facility, each room is designed for specific functions and requires various tools to support safe and efficient operations. The tools used in these rooms are often specialized to handle radioactive materials, ensure precision in maintenance and repairs, and maintain safety protocols. The <strong>reactor hall</strong> in a nuclear power plant or facility is a large, secure space that houses the nuclear reactor and other associated equipment. Overall, the reactor hall is a critical part of the infrastructure that ensures the safe and efficient operation of a nuclear reactor. The primary purposes of a reactor hall include:</p>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-house fs-1 text-dark"></i></div>
-                            <h3 class="h4 mb-2">Housing the Reactor</h3>
-                            <p class="text-secondary mb-0">The reactor hall contains the reactor vessel, where the nuclear fission process occurs. This area is designed to provide both physical and radiation protection for personnel and the environment.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-wrench fs-1 text-dark"></i></div>
-                            <h3 class="h4 mb-2">Maintenance and Refueling</h3>
-                            <p class="text-muted mb-0">The reactor hall allows for access to the reactor for maintenance and refueling operations. It is typically equipped with heavy-duty cranes and other equipment necessary for lifting and replacing fuel assemblies and reactor components.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-shield fs-1 text-dark"></i></div>
-                            <h3 class="h4 mb-2">Radiation Shielding</h3>
-                            <p class="text-muted mb-0">The reactor hall is often designed with thick walls made of concrete or other materials that provide shielding from the radiation produced by the reactor. This helps protect workers and the surrounding environment.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-clipboard-data fs-1 text-dark"></i></div>
-                            <h3 class="h4 mb-2">Control and Monitoring</h3>
-                            <p class="text-muted mb-0">Some areas within or adjacent to the reactor hall are used for monitoring and controlling reactor operations. While the primary control room is usually separate, auxiliary control stations or monitoring equipment may be present within the hall.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
+      <div class="row">
+        <!-- Main content -->
+        <div class="col-lg-9 mb-3">
+          <div class="row text-left mb-5">
+            <div class="col-lg-6 mb-3 mb-sm-0">
+              <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" style="width: 100%;">
+              <select class="form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" data-toggle="select" tabindex="-98">
+                <option> Categories </option>
+                <option> Learn </option>
+                <option> Share </option>
+                <option> Build </option>
+              </select>
+              </div>
             </div>
+            <div class="col-lg-6 text-lg-right">
+              <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50" style="width: 100%;">
+                  <select class="form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50" data-toggle="select" tabindex="-98">
+                    <option> Filter by </option>
+                    <option> Votes </option>
+                    <option> Replys </option>
+                    <option> Views </option>
+                  </select>
+              </div>
+            </div>
+          </div>
+          <!-- End of post 1 -->
+          <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+            <div class="row align-items-center">
+              <div class="col-md-8 mb-3 mb-sm-0">
+                <h5>
+                  <a href="#" class="text-primary">Drupal 8 quick starter guide</a>
+                </h5>
+                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">20 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">KenyeW</a></p>
+                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">#C++</a> <a class="text-black mr-2" href="#">#AppStrap Theme</a> <a class="text-black mr-2" href="#">#Wordpress</a> </div>
+              </div>
+              <div class="col-md-4 op-7">
+                <div class="row text-center op-7">
+                  <div class="col px-1"> <i class="ion-connection-bars icon-1x"></i> <span class="d-block text-sm">141 Votes</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">122 Replys</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-eye-outline icon-1x"></i> <span class="d-block text-sm">290 Views</span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /End of post 1 -->
+          <!-- End of post 2 -->
+          <div class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
+            <div class="row align-items-center">
+              <div class="col-md-8 mb-3 mb-sm-0">
+                <h5>
+                  <a href="#" class="text-primary">HELP! My Windows XP machine is down</a>
+                </h5>
+                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">54 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">DanielD</a></p>
+                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">#Development</a> <a class="text-black mr-2" href="#">#AppStrap Theme</a> </div>
+              </div>
+              <div class="col-md-4 op-7">
+                <div class="row text-center op-7">
+                  <div class="col px-1"> <i class="ion-connection-bars icon-1x"></i> <span class="d-block text-sm">256 Votes</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">251 Replys</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-eye-outline icon-1x"></i> <span class="d-block text-sm">223 Views</span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /End of post 2 -->
+          <!-- End of post 3 -->
+          <div class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
+            <div class="row align-items-center">
+              <div class="col-md-8 mb-3 mb-sm-0">
+                <h5>
+                  <a href="#" class="text-primary">Bootstrap 4 development in record time with AppStrap Bootstrap 4 Theme</a>
+                </h5>
+                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">32 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">AppStrapMaster</a></p>
+                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">#Bootstrap 4</a> <a class="text-black mr-2" href="#">#Wordpress</a> </div>
+              </div>
+              <div class="col-md-4 op-7">
+                <div class="row text-center op-7">
+                  <div class="col px-1"> <i class="ion-connection-bars icon-1x"></i> <span class="d-block text-sm">245 Votes</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">116 Replys</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-eye-outline icon-1x"></i> <span class="d-block text-sm">257 Views</span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /End of post 3 -->
+          <!-- End of post 4 -->
+          <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+            <div class="row align-items-center">
+              <div class="col-md-8 mb-3 mb-sm-0">
+                <h5>
+                  <a href="#" class="text-primary">Bootstrap 4 development in record time with AppStrap Bootstrap 4 Theme</a>
+                </h5>
+                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">29 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">Themelize.me</a></p>
+                <div class="text-sm op-5"> <a class="text-black mr-2" href="#">#Android</a> <a class="text-black mr-2" href="#">#Bootstrap 4</a> <a class="text-black mr-2" href="#">#Wordpress</a> <a class="text-black mr-2" href="#">#Drupal</a> </div>
+              </div>
+              <div class="col-md-4 op-7">
+                <div class="row text-center op-7">
+                  <div class="col px-1"> <i class="ion-connection-bars icon-1x"></i> <span class="d-block text-sm">49 Votes</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">29 Replys</span> </div>
+                  <div class="col px-1"> <i class="ion-ios-eye-outline icon-1x"></i> <span class="d-block text-sm">170 Views</span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /End of post 4 -->
+        
+        </div>
+        <!-- Sidebar content -->
+        <div class="col-lg-3 mb-4 mb-lg-0 px-lg-0 mt-lg-0">
+          <div style="visibility: hidden; display: none; width: 285px; height: 801px; margin: 0px; float: none; position: static; inset: 85px auto auto;"></div><div data-settings="{&quot;parent&quot;:&quot;#content&quot;,&quot;mind&quot;:&quot;#header&quot;,&quot;top&quot;:10,&quot;breakpoint&quot;:992}" data-toggle="sticky" class="sticky" style="top: 85px;"><div class="sticky-inner">
+            <a class="btn btn-lg btn-block btn-success rounded-0 py-4 mb-3 bg-op-6 roboto-bold" href="#">Ask Question</a>
+            <div class="bg-white mb-3">
+              <h4 class="px-3 py-4 op-5 m-0">
+                Active Topics
+              </h4>
+              <hr class="m-0">
+              <div class="pos-relative px-3 py-3">
+                <h6 class="text-primary text-sm">
+                  <a href="#" class="text-primary">Why Bootstrap 4 is so awesome? </a>
+                </h6>
+                <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">39 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">AppStrapMaster</a></p>
+              </div>
+              <hr class="m-0">
+              <div class="pos-relative px-3 py-3">
+                <h6 class="text-primary text-sm">
+                  <a href="#" class="text-primary">Custom shortcut or command to launch command in terminal? </a>
+                </h6>
+                <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">58 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">DanielD</a></p>
+              </div>
+              <hr class="m-0">
+              <div class="pos-relative px-3 py-3">
+                <h6 class="text-primary text-sm">
+                  <a href="#" class="text-primary">HELP! My Windows XP machine is down </a>
+                </h6>
+                <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">48 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">DanielD</a></p>
+              </div>
+              <hr class="m-0">
+              <div class="pos-relative px-3 py-3">
+                <h6 class="text-primary text-sm">
+                  <a href="#" class="text-primary">HELP! My Windows XP machine is down </a>
+                </h6>
+                <p class="mb-0 text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">38 minutes</a> <span class="op-6">ago by</span> <a class="text-black" href="#">DanielD</a></p>
+              </div>
+              <hr class="m-0">
+            </div>
+            <div class="bg-white text-sm">
+              <h4 class="px-3 py-4 op-5 m-0 roboto-bold">
+                Stats
+              </h4>
+              <hr class="my-0">
+              <div class="row text-center d-flex flex-row op-7 mx-0">
+                <div class="col-sm-6 flex-ew text-center py-3 border-bottom border-right"> <a class="d-block lead font-weight-bold" href="#">58</a> Topics </div>
+                <div class="col-sm-6 col flex-ew text-center py-3 border-bottom mx-0"> <a class="d-block lead font-weight-bold" href="#">1.856</a> Posts </div>
+              </div>
+              <div class="row d-flex flex-row op-7">
+                <div class="col-sm-6 flex-ew text-center py-3 border-right mx-0"> <a class="d-block lead font-weight-bold" href="#">300</a> Members </div>
+                <div class="col-sm-6 flex-ew text-center py-3 mx-0"> <a class="d-block lead font-weight-bold" href="#">DanielD</a> Newest Member </div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
         </section>
         <!-- Trainings-->
         <section class="page-section bg-secondary text-black" id="training">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card">
-                        <img src="assets/img/portfolio/fullsize/docs.jpg" class="card-img-top img-fluid" alt="...">
+                        <img src="../../assets/img/portfolio/fullsize/docs.jpg" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Documents</h5>
                             <p class="card-text">Discover the insights you're looking for—check out our documentation to find all the information and guidance you need.</p>
@@ -130,16 +276,12 @@
                                       Select Document
                                     </button>
                                     <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Document 1</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 2</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 3</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 4</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 5</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 6</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 7</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 8</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 9</a></li>
-                                      <li><a class="dropdown-item" href="#">Document 10</a></li>
+                                      <li><a class="dropdown-item" href="#">Alarm Panel Document</a></li>
+                                      <li><a class="dropdown-item" href="#">BackUp Power System Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Human Machine Interface Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Radiation Monitoring Instruments Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Reactor Control Panel Document</a></li>
+                                      <li><a class="dropdown-item" href="#">Nuclear Turbine Control Panel</a></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -149,7 +291,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="assets/img/portfolio/fullsize/mentor.jpg" class="card-img-top img-fluid" alt="...">
+                    <img src="../../assets/img/portfolio/fullsize/mentor.jpg" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Mentoring</h5>
                             <p class="card-text">Looking for expert guidance? Click the mentoring button to connect with our senior team and get the assistance you need</p>
@@ -159,7 +301,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="assets/img/portfolio/fullsize/Video1.jpg" class="card-img-top img-fluid" alt="Video Thumbnail">
+                    <img src="../../assets/img/portfolio/fullsize/Video1.jpg" class="card-img-top img-fluid" alt="Video Thumbnail">
                         <div class="card-body">
                             <h5 class="card-title">Video</h5>
                             <p class="card-text">Don’t miss out—watch the video now to get the answers and insights you’re looking for.</p>
@@ -175,7 +317,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video.mp4" type="video/mp4">
+                            <source src="../../assets/video/video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal4" class="prev">&laquo; Previous</a>
@@ -186,7 +328,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video2.mp4" type="video/mp4">
+                            <source src="../../assets/video/video2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal1" class="prev">&laquo; Previous</a>
@@ -197,7 +339,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video3.mp4" type="video/mp4">
+                            <source src="../../assets/video/video3.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal2" class="prev">&laquo; Previous</a>
@@ -208,7 +350,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video4.mp4" type="video/mp4">
+                            <source src="../../assets/video/video4.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal3" class="prev">&laquo; Previous</a>
@@ -357,159 +499,34 @@
         </div>
         </section>
         
-        <!-- Maintenance-->
-        <section class="page-section bg-secondary " id="Maintenance">
+        <!-- Future Enhancement-->
+        <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h2 class="text-black mt-0">Maintenance</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-black-75 mb-4">Maintenance procedures in nuclear power plants are critical for ensuring the safe and efficient operation of the facility. These procedures are designed to maintain the integrity of systems and equipment, minimize the risk of accidents, and extend the operational life of the plant. Here’s an overview of typical maintenance procedures:</p>
-                    </div>
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-                                <strong>Routine Maintenance</strong>
-                            </button>
-                          </h2>
-                          <div id="collapseOne1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Scheduled Inspections: Regular checks of plant equipment and systems, such as pumps, valves, and control systems, to ensure they are operating correctly.</p>
-                                <p class="text-black-75 mb-4">• Preventive Maintenance: Routine tasks performed to prevent equipment failures, such as lubrication, cleaning, and calibration.</p>
-                                <p class="text-black-75 mb-4">• Operational Testing: Testing of systems and components under normal operating conditions to ensure they perform as expected.</p>
-                            </div>
-                          </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                <strong>Corrective Maintenance</strong>
-                            </button>
-                          </h2>
-                          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Scheduled Inspections: Regular checks of plant equipment and systems, such as pumps, valves, and control systems, to ensure they are operating correctly.</p>
-                                <p class="text-black-75 mb-4">• Preventive Maintenance: Routine tasks performed to prevent equipment failures, such as lubrication, cleaning, and calibration.</p>
-                                <p class="text-black-75 mb-4">• Operational Testing: Testing of systems and components under normal operating conditions to ensure they perform as expected.</p>
-                            </div>
-                          </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                <strong>Corrective Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Problem Diagnosis: Identifying the cause of equipment malfunctions or failures through diagnostic tools and methods.</p>
-                                <p class="text-black-75 mb-4">• Repairs and Replacements: Fixing or replacing defective components to restore equipment to proper working condition.</p>
-                              </div>
-                            </div>
-                        </div>
-                          
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                <strong>Predictive Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                  <p class="text-black-75 mb-4">• Condition Monitoring: Using techniques such as vibration analysis, thermography, and acoustic emission to monitor the condition of equipment and predict potential failures before they occur.</p>
-                                  <p class="text-black-75 mb-4">• Data Analysis: Analyzing historical data and trends to forecast equipment needs and plan maintenance activities accordingly.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                <strong>Outage Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">
-                                    • Scheduled Outages: Plant shutdowns planned for major maintenance activities, including refueling and extensive inspections.</p>
-                                <p class="text-black-75 mb-4">• Major Overhauls: Detailed inspections, refurbishments, or replacements of critical components during longer plant shutdowns.</p>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                                <strong>Safety Procedures</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Lockout/Tagout (LOTO): Procedures to ensure that equipment is safely de-energized and isolated before maintenance work begins to protect personnel from accidental energization.</p>
-                                <p class="text-black-75 mb-4">• Radiation Protection: Ensuring that maintenance activities are conducted with appropriate radiation protection measures, including the use of personal protective equipment (PPE) and monitoring radiation levels.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                                <strong>Documentation and Record-Keeping</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Maintenance Records: Detailed documentation of all maintenance activities, including inspections, repairs, and replacements, is maintained for regulatory compliance and historical reference.</p>
-                                <p class="text-black-75 mb-4">• Reporting: Documenting any issues or anomalies discovered during maintenance and reporting them to ensure follow-up actions are taken.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                                <strong>Training and Competency</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Staff Training: Ongoing training programs to ensure that maintenance personnel are up-to-date with the latest procedures, technologies, and safety practices.</p>
-                                <p class="text-black-75 mb-4">• Competency Assessment: Regular evaluation of maintenance staff to ensure they possess the necessary skills and knowledge to perform their tasks safely and effectively.</p>
-                              </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapseThree">
-                                <strong>Quality Assurance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Inspections and Audits: Regular internal and external audits of maintenance procedures and practices to ensure compliance with safety standards and regulations.</p>
-                                <p class="text-black-75 mb-4">• Continuous Improvement: Implementing lessons learned from maintenance activities and incidents to enhance procedures and practices continuously.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item"></div>
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                                <strong>Emergency Maintenance</strong>
-                              </button>
-                            </h2>
-                            <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <p class="text-black-75 mb-4">• Rapid Response: Procedures for addressing unexpected equipment failures or issues that arise during normal operation or in emergency situations.</p>
-                                <p class="text-black-75 mb-4">• Coordination: Ensuring that emergency maintenance is coordinated with plant operations and emergency response teams to minimize disruptions and maintain safety.</p>
-                                </div>
-                            </div>
+                <h2 class="text-center mt-0">Future Enhancement</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-phone fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Augmented Reality</h3>
+                            
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">RFID integration</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Proximity Sensors</h3>
+                            
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -598,7 +615,7 @@
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="../../js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

@@ -16,8 +16,8 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/stylesNars.css" rel="stylesheet" />
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <link href="../../css/stylesNars.css" rel="stylesheet" />
         <style>
             header.masthead {
             padding-top: 10rem;
@@ -30,7 +30,10 @@
             }
 
             .img-position{
-            float: right;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
             }
         </style>
     </head>
@@ -38,17 +41,31 @@
         <!-- Header -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="1.ReactorHall.html" ></i>FissionFlux Navigator</a>
+    
+                <!--<div class="bg-success p-2" style="--bs-bg-opacity: .5;">This is 50% opacity success background</div>-->
+                <a class="navbar-brand" style="color: black;" href="ReactorHall.php">FissionFlux Navigator</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="1AboutReactorHall.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Tools">Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Trainings">Trainings</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Safety">Safety</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Maintenance">Maintenance Protocol</a></li>
-                        <li class="nav-item"><a class="nav-link" href="1PeopleReactorHall.html">People</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Future">Future Enhancements</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black"  ReactorHall_People.html href="ReactorHall_About.html">About</a></li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" style="color:black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tools
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ReactorHall_Tool_alarmpanel.html">Alarm Panels</a></li>
+                            <li><a class="dropdown-item" href="ReactorHall_Tool_backuppowertool.html">BackUp Power Systems</a></li>
+                            <li><a class="dropdown-item" href="ReactorHall_Tool_hmitool.html">Human Machine Interface</a></li>
+                            <li><a class="dropdown-item" href="ReactorHall_Tool_radiationinstrumenttool.html">Radiation Monitoring Instruments</a></li>
+                            <li><a class="dropdown-item" href="ReactorHall_Tool_reactorcontrol.html">Reactor Control Panel</a></li>
+                            <li><a class="dropdown-item" href="ReactorHall_Tool_turbinecontrol.html">Turbine Control Panel</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" style="color:black" href="ReactorHall.php#training">Trainings</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black" href="ReactorHall.php#Safety">Safety</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black" href="ReactorHall.php#Maintenance">Maintenance Protocol</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black" href="ReactorHall_People.html">People</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color:black" href="ReactorHall.php#Future">Future Enhancements</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,11 +79,10 @@
                         <h1 class="mx-auto text-white font-weight-bold" style="width: 400px;"><strong>Reactor Hall</strong></h1>
                     </div>
                     <div class="p-3">
-                        <img class="img-fluid p-2 img-position" src="assets\img\ReactorHall\P1.jpg" alt="..." />
-                        <img class="img-fluid p-2" src="assets\img\ReactorHall\P2.jpg" alt="..." />
-                        <img class="img-fluid p-2" src="assets\img\ReactorHall\P1.jpg" alt="..." />
-                        <img class="img-fluid p-2" src="assets\img\ReactorHall\P2.jpg" alt="..." />
-                        <img class="img-fluid p-2" src="assets\img\ReactorHall\P1.jpg" alt="..." />
+                        <img class="img-fluid p-2 img-position" src="../../assets\img\ReactorHall\P1.jpg" alt="..." />
+                        <img class="img-fluid p-2" src="../../assets\img\ReactorHall\P2.jpg" alt="..." />
+                        <img class="img-fluid p-2" src="../../assets\img\ReactorHall\P1.jpg" alt="..." />
+                        <img class="img-fluid p-2" src="../../assets\img\ReactorHall\P2.jpg" alt="..." />
                     </div>
                   </div>
                   <div class="col-6 ">
@@ -138,7 +154,7 @@
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="../../js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
