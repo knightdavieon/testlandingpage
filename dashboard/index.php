@@ -194,7 +194,7 @@
 
                     <div class="row"> <!--begin::Col-->
                         <!-- place map here -->
-                        <div class="col-lg-6 col-6"> <!--begin::Small Box Widget 1-->
+                        <div class="col-lg-6 col-sm-12"> <!--begin::Small Box Widget 1-->
                             <div id="map"></div>
                         </div>
                         <div class="col-lg-6 "> <!-- Info Boxes Style 2 -->
