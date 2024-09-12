@@ -24,13 +24,13 @@
         <!-- Header -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="ControlRoom.html">FissionFlux Navigator</a>
+                <a class="navbar-brand" style="color:black" href="ControlRoom.html">FissionFlux Navigator</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="ControlRoom_About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:black" href="ControlRoom_About.html">About</a></li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle" style="color:black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Tools
                       </a>
                       <ul class="dropdown-menu">
@@ -42,11 +42,11 @@
                           <li><a class="dropdown-item" href="ControlRoom_Tool_turbinecontrol.html">Turbine Control Panel</a></li>
                       </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#training">Trainings</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Safety">Safety</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Maintenance">Maintenance Protocol</a></li>
-                    <li class="nav-item"><a class="nav-link" href="1PeopleReactorHall.html">People</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Future">Future Enhancements</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:black" href="#training">Trainings</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:black" href="#Safety">Safety</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:black" href="#Maintenance">Maintenance Protocol</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:black" href="ControlRoom_People">People</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:black" href="#Future">Future Enhancements</a></li>
                 </ul>
                 </div>
             </div>

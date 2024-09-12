@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>Reactor Hall</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
@@ -16,21 +16,21 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/stylesNars.css" rel="stylesheet" />
-        <link href="css/stylesrnld.css" rel="stylesheet" />
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <link href="../../css/stylesNars.css" rel="stylesheet" />
+        <link href="../../css/stylesrnld.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Header -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="SpentFuelPool.html">FissionFlux Navigator</a>
+                <a class="navbar-brand" style="color: black" href="SpentFuelPool.html">FissionFlux Navigator</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="SpentFuelPool_About.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="SpentFuelPool_About.html">About</a></li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" style="color: black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tools
                           </a>
                           <ul class="dropdown-menu">
@@ -42,11 +42,11 @@
                             <li><a class="dropdown-item" href="SpentFuelPool_Tool_turbinecontrol.html">Turbine Control Panel</a></li>
                         </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#training">Trainings</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Safety">Safety</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Maintenance">Maintenance Protocol</a></li>
-                        <li class="nav-item"><a class="nav-link" href="1PeopleReactorHall.html">People</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Future">Future Enhancements</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#training">Trainings</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#Safety">Safety</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#Maintenance">Maintenance Protocol</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="SpentFuelRoom_People.html">People</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: black" href="#Future">Future Enhancements</a></li>
                     </ul>
                 </div>
             </div>
@@ -109,7 +109,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card">
-                        <img src="assets/img/portfolio/fullsize/docs.jpg" class="card-img-top img-fluid" alt="...">
+                        <img src="../../assets/img/portfolio/fullsize/docs.jpg" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Documents</h5>
                             <p class="card-text">Discover the insights you're looking for—check out our documentation to find all the information and guidance you need.</p>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="assets/img/portfolio/fullsize/mentor.jpg" class="card-img-top img-fluid" alt="...">
+                    <img src="../../assets/img/portfolio/fullsize/mentor.jpg" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Mentoring</h5>
                             <p class="card-text">Looking for expert guidance? Click the mentoring button to connect with our senior team and get the assistance you need</p>
@@ -159,7 +159,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="assets/img/portfolio/fullsize/Video1.jpg" class="card-img-top img-fluid" alt="Video Thumbnail">
+                    <img src="../../assets/img/portfolio/fullsize/Video1.jpg" class="card-img-top img-fluid" alt="Video Thumbnail">
                         <div class="card-body">
                             <h5 class="card-title">Video</h5>
                             <p class="card-text">Don’t miss out—watch the video now to get the answers and insights you’re looking for.</p>
@@ -175,7 +175,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video.mp4" type="video/mp4">
+                            <source src="../../assets/video/video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal4" class="prev">&laquo; Previous</a>
@@ -186,7 +186,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video2.mp4" type="video/mp4">
+                            <source src="../../assets/video/video2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal1" class="prev">&laquo; Previous</a>
@@ -197,7 +197,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video3.mp4" type="video/mp4">
+                            <source src="../../assets/video/video3.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal2" class="prev">&laquo; Previous</a>
@@ -208,7 +208,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="location.href='#training'">&times;</span>
                         <video controls>
-                            <source src="assets/video/video4.mp4" type="video/mp4">
+                            <source src="../../assets/video/video4.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <a href="#videoModal3" class="prev">&laquo; Previous</a>
@@ -598,7 +598,7 @@
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="../../js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
