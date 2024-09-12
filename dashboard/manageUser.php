@@ -279,6 +279,7 @@
                             .then(response => response.json())
                             .then(data => {
                                 table.ajax.reload();
+                                form.reset();
                                 Swal.fire('Success!', 'Your form has been submitted.', 'success');
                                 // Optionally, handle response here
                             })
@@ -399,7 +400,7 @@
                     if (result.isConfirmed) {
                         // Implement your delete logic here
                         $.ajax({
-                            url: '../controller/manageGeofence/deleteGeofence.php', // Endpoint to handle the deletion
+                            url: '../controller/manageUser/deleteUser.php', // Endpoint to handle the deletion
                             type: 'POST',
                             data: {
                                 id: data.id
@@ -411,7 +412,7 @@
 
                                 Swal.fire(
                                     'Deleted!',
-                                    'Geofence has been deleted.',
+                                    'User has been deleted.',
                                     'success'
                                 );
                             },
